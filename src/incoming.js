@@ -11,6 +11,8 @@ export function setUpIncomingEvents(bp, verificationToken) {
   const router = bp.getRouter('botpress-hangouts-chat');
   router.post('/', (req, res) => {
     const event = req.body;
+    console.log("before log----------------------");
+console.log(event);
     if (!event || !event.type || !event.token) {
       return res.status(400).end();
     }
